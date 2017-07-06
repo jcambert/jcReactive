@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jcReactive.Common", "jcReactive.Common\jcReactive.Common.csproj", "{27B80577-E565-4E5B-8EBC-217C16E6E32C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStore", "SharpStore\SharpStore.csproj", "{650BF8FC-55E5-4A92-8CC3-B54FABBC3A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStoreTests", "SharpStoreTests\SharpStoreTests.csproj", "{47956F51-BF11-4DA1-BBEE-CB630B749238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStoreWeb", "SharpStoreWeb\SharpStoreWeb.csproj", "{2DCDAB42-B29E-4FE6-900D-7CE2D523EF1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStoreWeb.Tests", "SharpStoreWeb.Tests\SharpStoreWeb.Tests.csproj", "{13BB343E-FFA8-4E0B-AA94-BD05B92B1543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jcReactive.Plugins", "jcReactive.Plugins\jcReactive.Plugins.csproj", "{C355B9ED-DA58-4705-A8C2-A68A978684BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JcReactive.Plugins.Tests", "JcReactive.Plugins.Tests\JcReactive.Plugins.Tests.csproj", "{F65B980F-4AEA-4DDC-BCEA-C1D60BBDC94F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{27B80577-E565-4E5B-8EBC-217C16E6E32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27B80577-E565-4E5B-8EBC-217C16E6E32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27B80577-E565-4E5B-8EBC-217C16E6E32C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{650BF8FC-55E5-4A92-8CC3-B54FABBC3A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{650BF8FC-55E5-4A92-8CC3-B54FABBC3A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{650BF8FC-55E5-4A92-8CC3-B54FABBC3A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{650BF8FC-55E5-4A92-8CC3-B54FABBC3A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47956F51-BF11-4DA1-BBEE-CB630B749238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47956F51-BF11-4DA1-BBEE-CB630B749238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47956F51-BF11-4DA1-BBEE-CB630B749238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47956F51-BF11-4DA1-BBEE-CB630B749238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DCDAB42-B29E-4FE6-900D-7CE2D523EF1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DCDAB42-B29E-4FE6-900D-7CE2D523EF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCDAB42-B29E-4FE6-900D-7CE2D523EF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DCDAB42-B29E-4FE6-900D-7CE2D523EF1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BB343E-FFA8-4E0B-AA94-BD05B92B1543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BB343E-FFA8-4E0B-AA94-BD05B92B1543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BB343E-FFA8-4E0B-AA94-BD05B92B1543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BB343E-FFA8-4E0B-AA94-BD05B92B1543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C355B9ED-DA58-4705-A8C2-A68A978684BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C355B9ED-DA58-4705-A8C2-A68A978684BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C355B9ED-DA58-4705-A8C2-A68A978684BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C355B9ED-DA58-4705-A8C2-A68A978684BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65B980F-4AEA-4DDC-BCEA-C1D60BBDC94F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65B980F-4AEA-4DDC-BCEA-C1D60BBDC94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65B980F-4AEA-4DDC-BCEA-C1D60BBDC94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65B980F-4AEA-4DDC-BCEA-C1D60BBDC94F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,14 @@
-﻿using System;
+﻿using jcReactive.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace jcReactive.Common
+namespace SharpStore
 {
-    public class Class1
+    public interface IProduct:IStoreModel
     {
+
     }
 }
