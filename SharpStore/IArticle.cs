@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SharpStore
 {
-    public interface IProduct:IStoreModel
+    public interface IArticle:IStoreModel
     {
 
     }

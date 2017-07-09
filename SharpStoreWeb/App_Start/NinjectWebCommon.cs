@@ -89,7 +89,7 @@ namespace SharpStoreWeb.App_Start
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
             kernel.Bind<IUIPage>().To<UIPage>();
             kernel.Bind<IMenu>().To<Menu>();
-            kernel.Bind<IProduct>().To<Product>().OnActivation(ActivateProduct);
+            kernel.Bind<IArticle>().To<Article>().OnActivation(ActivateProduct);
             kernel.Bind<IParametre>().To<Parametre>();
             kernel.Bind<IHubContext<IStoreHub>>().ToMethod(ctx => GlobalHost.ConnectionManager.GetHubContext<StoreHub, IStoreHub>()).InSingletonScope();
             kernel.Bind<StoreHub>().ToSelf().InSingletonScope().WithConstructorArgument("context", GlobalHost.ConnectionManager.GetHubContext<StoreHub, IStoreHub>()).WithConstructorArgument("kernel", kernel);
@@ -97,7 +97,7 @@ namespace SharpStoreWeb.App_Start
 
         }
 
-        public static void ActivateProduct(Product product)
+        public static void ActivateProduct(Article product)
         {
             product.Adding.Subscribe(p =>
             {

@@ -34,44 +34,44 @@ namespace SharpStoreWeb
 
             });
 
-            /*   using (var repo = Kernel.Get<IRepository<Parametre>>())
-               {
-                   var param = repo.Create();
-                   param.Societe = "000";
-                   param.Numero = 270;
-                   param.Code = "CS";
-                   param.Description = "Consommable";
-                   param.CreatedBy = "Systeme";
-                   param.CreatedAt = DateTime.Now;
-                   repo.Add(param);
+            using (var repo = Kernel.Get<IRepository<Parametre>>())
+            {
+                var param = repo.Create();
+                param.Societe = "000";
+                param.Numero = 270;
+                param.Code = "CS";
+                param.Description = "Consommable";
+                param.CreatedBy = "Systeme";
+                param.CreatedAt = DateTime.Now;
+                repo.Add(param);
 
-                   param = repo.Create();
-                   param.Societe = "000";
-                   param.Numero = 270;
-                   param.Code = "FG";
-                   param.Description = "Frais Generaux";
-                   param.CreatedBy = "Systeme";
-                   param.CreatedAt = DateTime.Now;
-                   repo.Add(param);
+                param = repo.Create();
+                param.Societe = "000";
+                param.Numero = 270;
+                param.Code = "FG";
+                param.Description = "Frais Generaux";
+                param.CreatedBy = "Systeme";
+                param.CreatedAt = DateTime.Now;
+                repo.Add(param);
 
-                   param = repo.Create();
-                   param.Societe = "000";
-                   param.Numero = 270;
-                   param.Code = "LB";
-                   param.Description = "Libelle";
-                   param.CreatedBy = "Systeme";
-                   param.CreatedAt = DateTime.Now;
-                   repo.Add(param);
+                param = repo.Create();
+                param.Societe = "000";
+                param.Numero = 270;
+                param.Code = "LB";
+                param.Description = "Libelle";
+                param.CreatedBy = "Systeme";
+                param.CreatedAt = DateTime.Now;
+                repo.Add(param);
 
-                   param = repo.Create();
-                   param.Societe = "000";
-                   param.Numero = 270;
-                   param.Code = "MP";
-                   param.Description = "Matiere premiere";
-                   param.CreatedBy = "Systeme";
-                   param.CreatedAt = DateTime.Now;
-                   repo.Add(param);
-               }*/
+                param = repo.Create();
+                param.Societe = "000";
+                param.Numero = 270;
+                param.Code = "MP";
+                param.Description = "Matiere premiere";
+                param.CreatedBy = "Systeme";
+                param.CreatedAt = DateTime.Now;
+                repo.Add(param);
+            }
             context.SaveChanges();
             using (var repo = Kernel.Get<IRepository<Menu>>())
             {
@@ -138,17 +138,17 @@ namespace SharpStoreWeb
             }
             context.SaveChanges();
 
-    
+
             using (var repo = Kernel.Get<IRepository<UIPage>>())
             {
                 var page = repo.Create();
                 page.Societe = "000";
                 page.Code = "gpao.main";
                 page.Title = "MAIN GPAO";
-                page.Navbar = new UINavbar() { Id = "navbar-id", Brand = "WebErp", Classes = "navbar-fixed-top",Icon="stars" };
-                
+                page.Navbar = new UINavbar() { Id = "navbar-id", Brand = "WebErp", Classes = "navbar-fixed-top", Icon = "stars" };
 
-                var cards = new UICards() {/* Id = "cards",*/ Header = new UICardHeader() { Color = "light-grey" }, Width = 3,RepeatOn="card in cards" };
+
+                var cards = new UICards() {/* Id = "cards",*/ Header = new UICardHeader() { Color = "light-grey" }, Width = 3, RepeatOn = "card in cards" };
                 page.Childs.Add(cards);
                 repo.Add(page);
             }

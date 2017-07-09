@@ -16,11 +16,17 @@ namespace SharpStore
         {
             
         }
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Chiffrage>().HasMany(c => c.Articles).WithMany(a => a.Chiffrages);
+        }
         public DbSet<UIPage> Pages { get; set; }
         public DbSet<Menu> Menus { get; set; }
-        public DbSet<Product> Products { get ; set ; }
+        public DbSet<Article> Products { get ; set ; }
         public DbSet<Parametre> Parametres { get; set; }
+        public DbSet<Chiffrage> Chiffrages { get; set; }
 
     }
+    
 }

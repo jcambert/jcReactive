@@ -106,6 +106,15 @@ namespace SharpStore {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La valeur mini doit etre {0}.
+        /// </summary>
+        public static string MinValue {
+            get {
+                return ResourceManager.GetString("MinValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à {0} est bloqué par {1}.
         /// </summary>
         public static string ModelCanOnlyUnlockBy {

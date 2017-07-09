@@ -32,7 +32,7 @@ namespace SharpStoreTests
             Kernel = new StandardKernel();
             Kernel.Bind<IReactiveDbContext>().To<StoreContext>().InAmbientScope();
             Kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InAmbientScopeAsTransient();
-            Kernel.Bind<IProduct>().To<Product>();
+            Kernel.Bind<IArticle>().To<Article>();
 
             EffortProviderFactory.ResetDb();
             onAdding = e =>
@@ -78,9 +78,9 @@ namespace SharpStoreTests
              {
                  using (var ctx = Kernel.Get<IReactiveDbContext>() as IStoreContext)
                  {
-                     var product = Kernel.Get<IProduct>();
+                     var product = Kernel.Get<IArticle>();
                      Assert.IsNotNull(product);
-                     Assert.IsInstanceOfType(product, typeof(Product));
+                     Assert.IsInstanceOfType(product, typeof(Article));
                  }
              };
             inAmbiant(a);
@@ -93,11 +93,11 @@ namespace SharpStoreTests
             {
                 using (var ctx = Kernel.Get<IReactiveDbContext>() as IStoreContext)
                 {
-                    var product = Kernel.Get<IProduct>();
+                    var product = Kernel.Get<IArticle>();
                     Assert.IsNotNull(product);
-                    Assert.IsInstanceOfType(product, typeof(Product));
+                    Assert.IsInstanceOfType(product, typeof(Article));
 
-                    ctx.Products.Add(product as Product);
+                    ctx.Products.Add(product as Article);
                 }
             };
             inAmbiant(a);
@@ -110,18 +110,18 @@ namespace SharpStoreTests
             {
                 using (var ctx = Kernel.Get<IReactiveDbContext>() as IStoreContext)
                 {
-                    using (var repo = Kernel.Get<IRepository<Product>>())
+                    using (var repo = Kernel.Get<IRepository<Article>>())
                     {
                         var product = repo.Create();
                         product.Adding.Subscribe(onAdding, e => { });
                         product.Code = "456";
                         Assert.IsNotNull(product);
-                        Assert.IsInstanceOfType(product, typeof(Product));
-                        repo.Add(product as Product);
+                        Assert.IsInstanceOfType(product, typeof(Article));
+                        repo.Add(product as Article);
                     }
                     ctx.SaveChanges();
 
-                    using (var repo = Kernel.Get<IRepository<Product>>())
+                    using (var repo = Kernel.Get<IRepository<Article>>())
                     {
                         var products = repo.GetAll();
                         Assert.AreEqual(products.Count(), 1);
@@ -144,7 +144,7 @@ namespace SharpStoreTests
                 using (var ctx = Kernel.Get<IReactiveDbContext>() as IStoreContext)
                 {
                     first_ctx = ctx.Guid;
-                    using (var repo = Kernel.Get<IRepository<Product>>())
+                    using (var repo = Kernel.Get<IRepository<Article>>())
                     {
                         Assert.AreEqual(ctx.Guid, repo.Context.Guid);
                         first_repo = repo.Guid;
@@ -154,7 +154,7 @@ namespace SharpStoreTests
                 using (var ctx = Kernel.Get<IReactiveDbContext>() as IStoreContext)
                 {
                     second_ctx = ctx.Guid;
-                    using (var repo = Kernel.Get<IRepository<Product>>())
+                    using (var repo = Kernel.Get<IRepository<Article>>())
                     {
                         Assert.AreEqual(ctx.Guid, repo.Context.Guid);
                         second_repo = repo.Guid;
@@ -173,16 +173,16 @@ namespace SharpStoreTests
         {
             Action a = () =>
             {
-                using (var repo = Kernel.Get<IRepository<Product>>())
+                using (var repo = Kernel.Get<IRepository<Article>>())
                 {
                     Assert.IsNotNull(repo.Context);
                     Assert.IsInstanceOfType(repo.Context, typeof(IStoreContext));
 
                     var product = repo.Create();
                     Assert.IsNotNull(product);
-                    Assert.IsInstanceOfType(product, typeof(Product));
+                    Assert.IsInstanceOfType(product, typeof(Article));
 
-                    repo.Add(product as Product);
+                    repo.Add(product as Article);
                 }
             };
             inAmbiant(a);
@@ -195,7 +195,7 @@ namespace SharpStoreTests
             {
                 using (var ctx = Kernel.Get<IReactiveDbContext>() as IStoreContext)
                 {
-                    using (var repo = Kernel.Get<IRepository<Product>>())
+                    using (var repo = Kernel.Get<IRepository<Article>>())
                     {
                         Assert.IsNotNull(repo.Context);
                         Assert.IsInstanceOfType(repo.Context, typeof(IStoreContext));
@@ -204,14 +204,14 @@ namespace SharpStoreTests
                         product.Added.Subscribe(onAdded, e => { });
                         product.Adding.Subscribe(onAdding, e => { });
                         Assert.IsNotNull(product);
-                        Assert.IsInstanceOfType(product, typeof(Product));
+                        Assert.IsInstanceOfType(product, typeof(Article));
 
-                        repo.Add(product as Product);
+                        repo.Add(product as Article);
 
 
                     }
 
-                    using (var repo = Kernel.Get<IRepository<Product>>())
+                    using (var repo = Kernel.Get<IRepository<Article>>())
                     {
                         Assert.IsNotNull(repo.Context);
                         Assert.IsInstanceOfType(repo.Context, typeof(IStoreContext));
@@ -220,9 +220,9 @@ namespace SharpStoreTests
                         product.Added.Subscribe(onAdded, e => { });
                         product.Adding.Subscribe(onAdding, e => { });
                         Assert.IsNotNull(product);
-                        Assert.IsInstanceOfType(product, typeof(Product));
+                        Assert.IsInstanceOfType(product, typeof(Article));
 
-                        repo.Add(product as Product);
+                        repo.Add(product as Article);
 
 
                     }
@@ -231,7 +231,7 @@ namespace SharpStoreTests
                     Assert.AreEqual(2, res);
 
 
-                    using (var repo = Kernel.Get<IRepository<Product>>())
+                    using (var repo = Kernel.Get<IRepository<Article>>())
                     {
                         Assert.AreEqual(2, repo.GetAll().Count());
 

@@ -15,7 +15,7 @@ using SharpStoreWeb.Models;
 namespace SharpStoreWeb.Controllers
 {
     
-    public class ProductController : BaseStoreController<Product, ProductDto> 
+    public class ArticleController : BaseStoreController<Article, ArticleDto> 
     {
 
     }

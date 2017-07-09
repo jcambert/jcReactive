@@ -15,9 +15,9 @@ namespace SharpStore
     /// Represent a eShop Product
     /// </summary>
     [DataContract]
-    public class Product:StoreModel,IProduct
+    public class Article:StoreModel,IArticle
     {
-        public Product()
+        public Article()
         {
             this.Adding.Subscribe(p =>
             {
@@ -72,6 +72,12 @@ namespace SharpStore
         /// Unite de Facturation
         /// </summary>
         public string UniteDeFacturation { get; set; }
+
+        /// <summary>
+        /// Chiffrages dans lesquels apparaissent l'article
+        /// </summary>
+        
+        public virtual List<Chiffrage> Chiffrages { get; set; } = new List<Chiffrage>();
 
     }
 }

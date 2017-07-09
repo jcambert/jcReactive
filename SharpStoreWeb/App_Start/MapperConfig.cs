@@ -19,7 +19,8 @@ namespace SharpStoreWeb
             {
                 cfg.ConstructServicesUsing(type => kernel.Get(type));
                 cfg.CreateMap<Parametre, ParametreDto>().ReverseMap();
-                cfg.CreateMap<Product, ProductDto>().ReverseMap();
+                cfg.CreateMap<Article, ArticleDto>().ReverseMap();
+                cfg.CreateMap<Chiffrage, ChiffrageDto>().ReverseMap();
                 cfg.CreateMap<Menu, MenuDto>().ReverseMap();
                 cfg.CreateMap<UIPage,UIPageDto>().ReverseMap();
             });

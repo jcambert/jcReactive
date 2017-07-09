@@ -10,7 +10,7 @@ namespace SharpStore
 {
     public interface IStoreContext : IReactiveDbContext, IDisposable
     {
-        DbSet<Product> Products { get; set; }
+        DbSet<Article> Products { get; set; }
 
         DbSet<Parametre> Parametres { get; set; }
 

@@ -132,6 +132,9 @@
   <data name="MinLength" xml:space="preserve">
     <value>{0} :doit avoir {1} caracteres minimum</value>
   </data>
+  <data name="MinValue" xml:space="preserve">
+    <value>La valeur mini doit etre {0}</value>
+  </data>
   <data name="ModelCanOnlyUnlockBy" xml:space="preserve">
     <value>{0} est bloqué par {1}</value>
   </data>

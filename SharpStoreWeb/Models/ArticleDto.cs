@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SharpStoreWeb.Models
 {
-    public class ProductDto:Product
+    public class ArticleDto:Article
     {
     }
 }

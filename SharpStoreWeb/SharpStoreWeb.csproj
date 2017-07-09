@@ -303,6 +303,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseStoreController.cs" />
+    <Compile Include="Controllers\ChiffrageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IBaseController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -327,13 +328,14 @@
     <Compile Include="Hubs\IStoreHub.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ChiffrageDto.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Models\InformationDto.cs" />
     <Compile Include="Models\LockByDto.cs" />
     <Compile Include="Models\MenuDto.cs" />
     <Compile Include="Models\ParametreDto.cs" />
-    <Compile Include="Models\ProductDto.cs" />
+    <Compile Include="Models\ArticleDto.cs" />
     <Compile Include="Models\UIPageDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -421,6 +423,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Chiffrage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
